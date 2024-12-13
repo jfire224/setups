@@ -1,0 +1,126 @@
+###What has been done to this OS/Machine (wherever you see this file)###
+
+##31.08.2023.##
+Installed
+Trying to install tp-link driver for wi-fi (TBD)
+Not yet installed tp-link driver !!!
+Both original and internet one did not work
+Trying again original (v6) (TBD)
+Driver install successful!! Follow instructions exactly from /Mange/rtl8192eu-linux-driver
+git clone'd in home directory. Successfully installed after 2nd time
+
+Deleting unnecessary files
+
+Installing miniconda:
+
+mkdir -p ~/miniconda3
+cond
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm -rf ~/miniconda3/miniconda.sh
+
+initializing shells:
+
+~/miniconda3/bin/conda init bash
+~/miniconda3/bin/conda init zsh
+
+##04.09.2023.##
+"conda activate/deactivate" -- activates/deactivates (base)
+"conda update conda" -- conda update
+"conda create --name EnvironmentName package1 package2..." -- create env
+"conda info --envs" -- see envs
+"conda list" -- see the packages in current environment
+"conda install Package" -- install a package in the environment
+"conda search Package" -- serch for a package
+
+##20.09.2023.##
+#OneDrive for linux configuration#
+"sudo apt install onedrive" -- installing onedrive package
+after installation, launch with command "onedrive".
+First time config is done by authorizing an account, after authorization
+copy the resulting link from browser and hit Enter.
+useful commands:
+"systemctl --user enable onedrive" -- systemctl command for user service
+"systemctl --user start onedrive" -- systemctl command for user service
+"onedrive --help" -- for further instructions
+
+# update to notebook 7 (jupyter #
+with conda activated in base env, "pip install notebook"
+in other environments possible with additional argument:
+"pip install --upgrade notebook"
+
+##22.09.2023##
+#g++ for vs code#
+"sudo apt-get install build-essential gdb" -- install build-essential and gdb
+
+##08.10.2023##
+right click stopped working. installed synaptics with
+"sudo apt install xserver-xorg-input-synaptics"
+
+then some fail with filesystem /dev/sda2. In refind, choose the kali grub, then choose recovery mode.
+some kind of terminal should appear full screen.
+run command
+"fsck -P /dev/sda2" or the other filesystem which is broken
+follow the instructions on screen
+the inodes should be fixed
+
+##22.10.2023.##
+To get mendeley working need to
+sudo chmod a+x /path/to/mendeley/download
+./path/to/mendeley/download
+also need to
+sudo add-apt-repository universe
+sudo apt install libfuse2
+
+installed git with
+sudo apt install git
+to add syntax highlighting and autocomplete to terminal
+
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+and
+
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+
+
+##26.01.2024##
+
+installed wireshark w/
+"sudo apt install wireshark"
+
+installed enum4linuxw w/
+"git clone <enum4linux github repo>"
+"cd enum4linux"
+"./enum4linux.pl"
+install dependencies if necessary
+DID NOT WORK, installed w/
+"sudo snap install enum4linux"
+
+installed nmap w/
+"sudo apt install nmap"
+
+installed metasploit w/
+"curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
+  chmod 755 msfinstall && \
+  ./msfinstall"
+
+##31.01.2024.##
+Moved back to kali. Better terminal, better everything. Only downside, need to repeat manual wifi dongle driver install (see first entry in this diary)
+
+##03.07.2024.##
+Quick USB stick format (found on youtube)
+1) sudo umount /dev/sdxx <-----unmount your drive
+2) sudo mkfs.vfat /dev/sdxx <----one command format USB stick
+
+
+### RUST ###
+install:
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh 
+
+### Wi-Fi driver maybe install again? ###
+https://github.com/clnhub/rtl8192eu-linux
+
+follow instructions there!
+I suppose this was the one that worked!! Still works in 20.10.2024.
+
+### KALI iMac
+created install usb (NOT LIVE SYSTEM!!!)
